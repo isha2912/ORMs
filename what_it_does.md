@@ -37,4 +37,4 @@ What can be a problem?
 
 > As a developer, it is important to understand what is happening under the hood. Since ORMs can serve as a crutch to avoid understanding databases and SQL, it can make you a weaker developer in that portion of the stack.
 
-Some P
+Some Popular ORMs are:
