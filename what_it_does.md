@@ -25,8 +25,6 @@ What does it give me as a developer?
 
 > Depending on the ORM you get a lot of advanced features out of the box, such as support for transactions, connection-pooling, migrations, seeds, streams, and all sorts of other goodies.
 
-> Many of the queries you write through ORM will perform better than if you wrote raw queries.
-
 What can be a problem?
 
 > If you are a master at SQL, you can probably get more performant queries by writing them without using ORM.
@@ -37,4 +35,49 @@ What can be a problem?
 
 > Lastly, as a developer, it is important to understand what is happening under the hood. Since ORMs can serve as a crutch to avoid understanding the databases and the SQL, it can make you a weaker developer in that portion of the stack.
 
-Some Popular ORMs are:
+Some Popular ORMs for Node.js:
+TypeORM and Sequelize are the two most popular relational database ORMs.
+
+We'll be talking about Sequelize here.
+Sequelize is a promise-based ORM for Node.js v4 and up. It supports the dialects PostgreSQL, MySQL, SQLite and MSSQL and features solid transaction support, relations, read replication and more
+Getting started:
+
+Lets start! Let’s npm init before installing our packages!
+
+npm init
+
+Npm install sequelize with PostgreSQL
+
+npm install sequelize
+npm install pg pg-hstore
+
+we’ll use the Sequelize CLI (Command Line Interface) to create a Postgres database and generate models, migrations, and seed files using our terminal in MacOS or Linux.
+
+npm install --save-dev sequelize-cli
+
+Next we will initialize a Sequelize project, then open the directory in our code editor:
+
+npx sequelize-cli init
+code .
+
+Initializing the project creates four subdirectories: config, migrations, models, and seeders. First, we’ll look in config to set up our project to work with Postgres.
+
+For future projects, you’ll use config/config.json to control user access, name databases, and determine which SQL dialect Sequelize will use. For now, you can cut and paste, replacing what is currently in the file with the code below.
+sequelize-project/config/config.json:
+{
+"development": {
+"database": "sequelize_project_development",
+"host": "127.0.0.1",
+"dialect": "postgres"
+},
+"test": {
+"database": "sequelize_project_test",
+"host": "127.0.0.1",
+"dialect": "postgres"
+},
+"production": {
+"database": "sequelize_project_production",
+"host": "127.0.0.1",
+"dialect": "postgres"
+}
+}
